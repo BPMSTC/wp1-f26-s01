@@ -1,0 +1,9 @@
+services:
+  web:
+    build: .
+    image: ${IMAGE_NAME:-wp1-starter:local}
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ConnectionStrings__DefaultConnection: ${WP1_CONNECTION_STRING:-}
